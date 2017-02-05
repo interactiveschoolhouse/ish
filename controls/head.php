@@ -10,11 +10,7 @@
   <link href="/plugins/jquery-ui/jquery-ui.css" rel="stylesheet">
   <link href="/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="/plugins/rs-plugin/css/settings.css" media="screen">
   <link rel="stylesheet" type="text/css" href="/plugins/selectbox/select_option1.css">
-<!--  <link rel="stylesheet" type="text/css" href="/plugins/owl-carousel/owl.carousel.css" media="screen">-->
-  <link rel="stylesheet" type="text/css" href="/plugins/isotope/jquery.fancybox.css">
-<!--  <link rel="stylesheet" type="text/css" href="/plugins/isotope/isotope.css">-->
   
   <!-- GOOGLE FONT -->
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
