@@ -1,0 +1,18 @@
+.headerV3 {
+    position: static;
+}
+
+.headerV3 .lightHeader {
+    background-color: rgba(251, 245, 159, 1);
+}
+
+@media (min-width: 768px){
+    .navbar-default.lightHeader {
+        height: 115px;
+    }
+    .navbar-header .navbar-brand {
+        height: auto;
+        padding: 0;
+        width: auto;
+    }
+}

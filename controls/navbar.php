@@ -9,7 +9,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index-v3.html"><img src="img/logo-daycare.png" alt="logo"></a>
+            <a class="navbar-brand" href="/"><img src="/images/logo/header-logo-ISH.jpg" alt="logo"></a>
           </div>
 
           <!-- Collect the nav links, forms, and other content for toggling -->
