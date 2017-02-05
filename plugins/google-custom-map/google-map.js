@@ -1,15 +1,8 @@
-var map;
-
 function initMap() {
+    var ishLat = 42.180826;
+    var ishLng = -72.362842;
 
-    var latlng = new google.maps.LatLng(53.385873, -1.471471);
-
-    var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
-    var beachMarker = new google.maps.Marker({
-        position: {lat: 53.385873, lng: -1.471471},
-        map: map,
-        icon: image
-    });
+    var latlng = new google.maps.LatLng(ishLat, ishLng);
 
     var styles = [
     {
@@ -52,7 +45,37 @@ function initMap() {
         scrollwheel:  false
     };
 
-    map = new google.maps.Map(document.getElementById('map'), myOptions);
+    var map = new google.maps.Map(document.getElementById('map'), myOptions);
+
+    var directionsDisplay = new google.maps.DirectionsRenderer();
+    directionsDisplay.setMap(map);
+    directionsDisplay.setPanel(document.getElementById("directionsPanel"));
+    google.maps.event.addListener(map, 'click', function() {
+        infowindow.close();
+    });
+
+    var ishMarker = new google.maps.Marker({
+        position: {lat: ishLat, lng: ishLng},
+        map: map,
+        title: 'Interactive School House'
+    });
+
+    var openDirectionsContent = document.getElementById("directionsToIshContent").innerHTML;
+    //"<b>" + ishMarker.getTitle() + '</b><br><a target="_blank" href="https://maps.google.com/maps?saddr=My+Location&daddr=42.180826,-72.362842">2055 Main St</a><br>Three Rivers, MA 01080<br>(413) 896-5838<br><b>Owner: </b>Nancy Roy<br><a href="mailto:interactiveschoolhouse@gmail.com">interactiveschoolhouse@gmail.com</a>';
+ 
+    var directionsService = new google.maps.DirectionsService();
+
+    var infowindow = new google.maps.InfoWindow({
+        size: new google.maps.Size(150, 50)
+    });
+
+    google.maps.event.addListener(ishMarker, 'click', function() {
+        map.setZoom(15);
+        map.setCenter(ishMarker.getPosition());
+        infowindow.setContent(openDirectionsContent);
+        infowindow.open(map, ishMarker);
+    });
+
 }
 
 
