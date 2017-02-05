@@ -20,6 +20,7 @@
   <link href="/css/style.css" rel="stylesheet">
   <link rel="stylesheet" href="/css/colors/default.css" id="option_color">
   <link rel="stylesheet" href="/css/themeoverrides.css">
+  <link rel="stylesheet" href="/css/mysite.css">
 
   <!-- Icons -->
   <link rel="shortcut icon" href="/img/favicon.png">
