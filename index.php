@@ -9,29 +9,7 @@
     <?php require "/controls/header.php" ?>
     <?php require "/controls/banner.php" ?>
 
-    <!-- WHITE SECTION -->
-    <section class="whiteSection full-width clearfix aboutSchool">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-6 col-sm-push-6 col-xs-12">
-            <img src="img/home/about-school.png" alt="image" class="img-responsive">
-          </div>
-          <div class="col-sm-6 col-sm-pull-6 col-xs-12">
-            <div class="schoolInfo">
-              <h2>Wellcome to kidz school</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nos trud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-              <p class="color-3">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-              <ul class="list-unstyled">
-                <li><i class="fa fa-check" aria-hidden="true"></i> Vestibulum iaculis quam ac libero volutpat placerat.</li>
-                <li><i class="fa fa-check" aria-hidden="true"></i> Phasellus sit amet risus fringilla, aliquet lacus vel, suscipit lorem.</li>
-                <li><i class="fa fa-check" aria-hidden="true"></i> Etiam suscipit velit et tellus bibendum interdum.</li>
-              </ul>
-              <a href="about_us.html" class="btn btn-primary">read more</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <?php require "/content/home/aboutSchool.php" ?>
 
     <!-- COLOR SECTION -->
     <section class="colorSection full-width clearfix bg-color-4 servicesSection">
