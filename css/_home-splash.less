@@ -1,0 +1,28 @@
+// out: false
+@import "_variables.less";
+
+.banner__splash {
+    position: relative;
+}
+.banner__splash img {
+    width: auto;
+    height: 200px;
+}
+
+.splash__info-text {
+    position: absolute;
+    left: 20%;
+    top: 2em;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.1em;
+    background-color: rgba(47, 60, 67, 0.65);
+    padding: 1em;
+    border-radius: 1em;
+}
+@media (min-width: @tabletBreakPoint){
+    .banner__splash img {
+        height: 282px;
+    }
+}
+
