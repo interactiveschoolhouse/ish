@@ -1,8 +1,8 @@
-<section class="aboutSchool about-school__container">
-    <div class="about-school__photo">
+<section class="aboutSchool three-column-container">
+    <div class="column-one about-school__photo">
         <img src="/images/home/nancy-welcome.png">
     </div>
-    <div class="schoolInfo about-school__content">
+    <div class="column-two schoolInfo about-school__content">
         <h2>
             Welcome to the Interactive School House
         </h2>
@@ -22,7 +22,7 @@
             <a href="tel:<?php echo CONTACT_TELEPHONE_RAW ?>"><strong><?php echo CONTACT_TELEPHONE_DISPLAY ?></strong></a> 
         </p>
     </div>
-    <div class="about-school__info-panel">
-        Info panel
+    <div class="column-three about-school__info-panel">
+        <?php require "/content/callouts/programs.php" ?>
     </div>
 </section>

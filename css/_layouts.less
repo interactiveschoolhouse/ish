@@ -1,0 +1,53 @@
+// out: false
+@import "_variables.less";
+
+.three-column-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: @standardPadding auto;
+    max-width: @largeMaxWidth;
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+
+    .column-one {
+        width: 25%;
+    }
+    .column-two {
+        width: 50%;
+        padding: 0 @standardPadding;
+    }
+    .column-three {
+        width: 25%;
+    }
+}
+
+@media (max-width: @largeBreakPoint) {
+    .three-column-container {
+        max-width: @largeMaxWidth;
+        padding: @standardPadding;
+    }
+}
+
+@media (max-width: @tabletBreakPoint) {
+    .three-column-container {
+        display: block;
+        width: auto;
+        padding: 0;
+
+        .column-one {
+            width: auto;
+            padding: @standardPadding;
+        }
+        .column-two{
+            width: auto;
+            padding: @standardPadding;
+        }
+        .column-three {
+            width: auto;
+            padding: @standardPadding;
+        }
+    }
+}
