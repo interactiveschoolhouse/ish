@@ -24,6 +24,16 @@
     }
 }
 
+.two-column__list {
+    display: flex;
+    flex-wrap: wrap;
+
+    li {
+        width: 50%;
+        padding: @standardPadding 2em;
+    }
+}
+
 @media (max-width: @largeBreakPoint) {
     .three-column-container {
         max-width: @largeMaxWidth;

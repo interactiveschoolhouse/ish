@@ -10,7 +10,8 @@
     <?php require "/controls/banner.php" ?>
 
     <?php require "/content/home/aboutSchool.php" ?>
-
+    <?php require "/content/home/events.php" ?>
+    
     <!-- COLOR SECTION -->
     <section class="colorSection full-width clearfix bg-color-4 servicesSection">
       <div class="container">
@@ -90,98 +91,6 @@
       </div>
     </section>
 
-    <!-- WHITE SECTION -->
-    <section class="whiteSection full-width clearfix eventSection" id="ourEvents">
-      <div class="container">
-        <div class="sectionTitle text-center">
-          <h2>
-            <span class="shape shape-left bg-color-4"></span>
-            <span>Our Events</span>
-            <span class="shape shape-right bg-color-4"></span>
-          </h2>
-        </div>
-          
-        <div class="row">
-          <div class="col-sm-6 col-xs-12 block">
-            <div class="media eventContent bg-color-1">
-              <a class="media-left" href="single-event-left-sidebar.html">
-                <img class="media-object" src="img/home/event/event-1.jpg" alt="Image">
-                <span class="sticker-round">10 <br>July</span>
-              </a>
-              <div class="media-body">
-                <h3 class="media-heading"><a href="single-event-left-sidebar.html">Curabitur tempor metus.</a></h3>
-                <ul class="list-unstyled">
-                  <li><i class="fa fa-calendar-o" aria-hidden="true"></i>Age 2 to 4 Years</li>
-                  <li><i class="fa fa-clock-o" aria-hidden="true"></i>9.00AM-11.00AM</li>
-                </ul>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor </p>
-                <ul class="list-inline btn-yellow">
-                  <li><a href="single-event-left-sidebar.html" class="btn btn-primary">read more</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-xs-12 block">
-            <div class="media eventContent bg-color-2">
-              <a class="media-left" href="single-event-left-sidebar.html">
-                <img class="media-object" src="img/home/event/event-2.jpg" alt="Image">
-                <span class="sticker-round">10 <br>July</span>
-              </a>
-              <div class="media-body">
-                <h3 class="media-heading"><a href="single-event-left-sidebar.html">Aenean vel leo vitae sem.</a></h3>
-                <ul class="list-unstyled">
-                  <li><i class="fa fa-calendar-o" aria-hidden="true"></i>Age 2 to 4 Years</li>
-                  <li><i class="fa fa-clock-o" aria-hidden="true"></i>9.00AM-11.00AM</li>
-                </ul>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor </p>
-                <ul class="list-inline btn-green">
-                  <li><a href="single-event-left-sidebar.html" class="btn btn-primary">read more</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-xs-12 block">
-            <div class="media eventContent bg-color-3">
-              <a class="media-left" href="single-event-left-sidebar.html">
-                <img class="media-object" src="img/home/event/event-3.jpg" alt="Image">
-                <span class="sticker-round">10 <br>July</span>
-              </a>
-              <div class="media-body">
-                <h3 class="media-heading"><a href="single-event-left-sidebar.html">Nunc suscipit sem et.</a></h3>
-                <ul class="list-unstyled">
-                  <li><i class="fa fa-calendar-o" aria-hidden="true"></i>Age 2 to 4 Years</li>
-                  <li><i class="fa fa-clock-o" aria-hidden="true"></i>9.00AM-11.00AM</li>
-                </ul>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor </p>
-                <ul class="list-inline btn-red">
-                  <li><a href="single-event-left-sidebar.html" class="btn btn-primary">read more</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-xs-12 block">
-            <div class="media eventContent bg-color-4">
-              <a class="media-left" href="single-event-left-sidebar.html">
-                <img class="media-object" src="img/home/event/event-4.jpg" alt="Image">
-                <span class="sticker-round">10 <br>July</span>
-              </a>
-              <div class="media-body">
-                <h3 class="media-heading"><a href="single-event-left-sidebar.html">Suspendisse eleifend ipsum.</a></h3>
-                <ul class="list-unstyled">
-                  <li><i class="fa fa-calendar-o" aria-hidden="true"></i>Age 2 to 4 Years</li>
-                  <li><i class="fa fa-clock-o" aria-hidden="true"></i>9.00AM-11.00AM</li>
-                </ul>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor </p>
-                <ul class="list-inline btn-sky">
-                  <li><a href="#" class="btn btn-primary">read more</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    
     <!-- COLOR SECTION -->
     <section class="colorSection full-width clearfix bg-color-6 teamSection">
       <div class="container">

@@ -28,7 +28,7 @@
             </div>
             <div class="col-sm-7 col-sm-pull-5 col-xs-12">
               <div class="copyRightText">
-                <p>© <?php echo date("Y"); ?> Copyright Interactive School House, Nancy Roy</p>
+                <p>© <?php echo date("Y"); ?> Copyright Interactive School House, LLC - All rights reserved.</p>
               </div>
             </div>
           </div>

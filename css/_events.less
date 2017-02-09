@@ -1,0 +1,54 @@
+// out: false
+@import "_variables.less";
+
+.events-container {
+    color: #fff;
+    margin: @standardPadding auto;
+    max-width: @largeMaxWidth;
+
+    h3 {
+        color: #fff;
+        margin:  12px 0;
+    }
+    
+    .two-column__list {
+        li:nth-child(4n+1) {
+            .event__content {
+                background-color: @backgroundColor2;
+            }
+        }
+        li:nth-child(4n+2) {
+            .event__content {
+                background-color: @backgroundColor3;
+            }
+        }
+        li:nth-child(4n+3) {
+            .event__content {
+                background-color: @backgroundColor4;
+            }
+        }
+        li:nth-child(4n+4) {
+            .event__content {
+                background-color: @backgroundColor1;
+            }
+        }
+    }
+}
+
+.event__content {
+    height: 100%;
+    border-radius: @standardBorderRadius;
+    padding: 2em;
+}
+
+.event__date {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.event__time {
+    padding-bottom: @standardPadding;
+}
+.event__description {
+    padding-bottom: @standardPadding;
+}
