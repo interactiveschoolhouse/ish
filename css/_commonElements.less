@@ -1,0 +1,27 @@
+// out: false
+@import "_variables.less";
+
+
+.site-button(@bgColor, @color) {
+    background-color: @bgColor;
+    color: @color;
+    font-weight: 600;
+    border-radius: 6px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    padding: 0 20px;
+    box-shadow: 0 4px 0 rgba(0, 0, 0, 0.1);
+    text-transform: uppercase;
+   
+    display: inline-block;
+    &:hover {
+        color: #b5d56a;
+        outline: 0;
+        box-shadow: 0 4px 0 rgba(0, 0, 0, 0.3);
+    }
+}
+
+.inverse-button {
+    .site-button(#ffffff, #666666);
+}

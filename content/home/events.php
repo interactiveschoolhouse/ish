@@ -1,4 +1,11 @@
 <section class="events-container">
+    <div class="sectionTitle section-title">
+        <h2>
+            <span class="shape shape-left bg-color-4"></span>
+            <span>Our Events</span>
+            <span class="shape shape-right bg-color-4"></span>
+        </h2>        
+    </div>
     <ul class="two-column__list">
         <li>
             <div class="event__content">
@@ -14,7 +21,9 @@
                     <div class="event__description">
                         $50/person for series of three lessons.  Each class will have a different project including painting, sewing, and sculpture.
                     </div>
-                    <a href="#register">Register</a>
+                </div>
+                <div class="event__commands">
+                    <a class="inverse-button" href="#register">Register</a>
                 </div>
             </div>
         </li>
@@ -33,7 +42,9 @@
                         $50 for 3 class series for adults and teens.  Beginners and people who want to brush up on rusty techniques are encouraged to join the class.  
                         Andrea's instruction style is fun and full of positive encouragement.                
                     </div>
-                    <a href="#register">Register</a>
+                </div>
+                <div class="event__commands">
+                    <a class="inverse-button" href="#register">Register</a>
                 </div>
             </div>
         </li>
@@ -51,7 +62,9 @@
                     <div class="event__description">
                         $50/person for series of three lessons.  Each class will have a different project including painting, sewing, and sculpture.
                     </div>
-                    <a href="#register">Register</a>
+                </div>
+                <div class="event__commands">
+                    <a class="inverse-button" href="#register">Register</a>
                 </div>
             </div>
         </li>
@@ -72,7 +85,9 @@
                         $20/person
                         Class size limited to 5.                    
                     </div>
-                    <a href="#register">Register</a>
+                </div>
+                <div class="event__commands">
+                    <a class="inverse-button" href="#register">Register</a>
                 </div>
             </div>
         </li>
