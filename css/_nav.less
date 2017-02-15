@@ -1,0 +1,27 @@
+// out: false
+@import "_variables.less";
+.site-nav {
+    background-color: rgba(251, 245, 159, 1);
+}
+
+.site-nav__container {
+    max-width: @largeMaxWidth;
+    margin: 0 auto;
+    display: flex;
+}
+
+.site-nav__logo {
+    flex: 1;
+}
+
+.site-nav__menu {
+    flex: 3;
+    ul {
+        display: flex;
+        li {
+            &:first-child {
+                flex-grow: 1;
+            }
+        }
+    }
+}
