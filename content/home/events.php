@@ -20,8 +20,10 @@
                     <div class="event__info">
                         <h3><?php echo $event->Title ?></h3>
                         <div class="event__time">
+                            <?php if (!empty($event->FormattedTimeDuration)) { ?>
                             <i class="fa fa-clock-o" aria-hidden="true"></i>
                             <?php echo $event->FormattedTimeDuration ?>
+                            <?php } ?>
                         </div>
                         <div class="event__description">
                             <?php foreach($event->DescriptionLines as $descriptionLine) { ?>
@@ -30,7 +32,9 @@
                         </div>
                     </div>
                     <div class="event__commands">
+                        <?php if ($event->RegistrationAllowed) { ?>
                         <a class="inverse-button" href="#register">Register</a>
+                        <?php } ?>
                     </div>
                 </div>
             </li>
