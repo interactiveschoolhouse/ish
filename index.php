@@ -1,3 +1,4 @@
+<?php $pageTitle="Home - Interactive School House" ?>
 <?php require "/code/startup.php" ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -5,12 +6,11 @@
 <body class="body-wrapper version3">
 
   <div class="main-wrapper">
-    <!-- HEADER -->
     <?php require "/controls/header.php" ?>
     <?php require "/controls/banner.php" ?>
 
-    <?php require "/content/home/aboutSchool.php" ?>
-    <?php require "/content/home/events.php" ?>
+    <?php require "/content/aboutSchool.php" ?>
+    <?php require "/controls/events.php" ?>
     
     <!-- COLOR SECTION -->
     <section class="colorSection full-width clearfix bg-color-4 servicesSection">
@@ -268,7 +268,7 @@
       <div id="map"></div>
     </section>
 
-    <?php require "/controls/footer.php"; ?>
+    <?php require "/controls/footer.php" ?>
 
   </div>
 
@@ -277,6 +277,9 @@
   </div>
 
   <?php require "/controls/jsLibraries.php" ?>
+
+  <script src="/plugins/google-custom-map/google-map.js"></script>
+  <?php require "/controls/googleMaps.php" ?>
 
 </body>
 

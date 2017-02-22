@@ -1,7 +1,9 @@
 <nav class="site-nav">
   <div class="site-nav__container">
     <div class="site-nav__logo">
-      <img alt="logo" src="/images/logo/header-logo-ISH.jpg">
+      <a href="/">
+        <img alt="logo" src="/images/logo/header-logo-ISH.jpg">
+      </a>
     </div>
     <div class="site-nav__menu">
       <ul>

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Home - Interactive School House</title>
+  <title><?php echo $pageTitle ?></title>
   
   <!-- PLUGINS CSS STYLE -->
   <link href="/plugins/jquery-ui/jquery-ui.css" rel="stylesheet">
@@ -18,7 +18,6 @@
 
   <!-- CUSTOM CSS -->
   <link href="/css/style.css" rel="stylesheet">
-  <link rel="stylesheet" href="/css/colors/default.css" id="option_color">
   <link rel="stylesheet" href="/css/themeoverrides.css">
   <link rel="stylesheet" href="/css/site.css">
 

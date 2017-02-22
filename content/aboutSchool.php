@@ -23,6 +23,6 @@
         </p>
     </div>
     <div class="column-three about-school__info-panel">
-        <?php require "/content/callouts/programs.php" ?>
+        <?php require "/content/programs.php" ?>
     </div>
 </section>
