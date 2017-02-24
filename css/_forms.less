@@ -1,0 +1,36 @@
+@import "_variables.less";
+
+.site-form {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.form__field {
+    padding: @standardPadding;
+    &:nth-child(1) {
+        input {
+            border-color: @backgroundColor2;
+        }
+    }
+    &:nth-child(2) {
+        input {
+            border-color: @backgroundColor3;
+        }
+    }
+    input, textarea {
+        width: 100%;
+        border-style: solid;
+        border-width: 3px;
+        border-radius: 10px;
+        box-shadow: none;
+        padding: 6px 12px;
+        padding-right: 50px;
+        font-size: 14px;
+    }
+
+
+    width: 100%;
+    &.field--half-width {
+        width: 50%;
+    }
+}

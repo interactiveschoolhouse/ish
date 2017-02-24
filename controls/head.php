@@ -19,7 +19,7 @@
   <!-- CUSTOM CSS -->
   <link href="/css/style.css" rel="stylesheet">
   <link rel="stylesheet" href="/css/themeoverrides.css">
-  <link rel="stylesheet" href="/css/site.css">
+  <link rel="stylesheet" href="/css/site.min.css">
 
   <!-- Icons -->
   <link rel="shortcut icon" href="/img/favicon.png">

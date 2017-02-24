@@ -1,0 +1,32 @@
+{
+  "name": "ish",
+  "version": "1.0.0",
+  "description": "Node Module Setup for ISH",
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-cssmin": "^0.1.7",
+    "gulp-less": "^3.3.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/interactiveschoolhouse/ish.git"
+  },
+  "keywords": [
+    "Interactive",
+    "School",
+    "House"
+  ],
+  "author": "Jeff Roy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/interactiveschoolhouse/ish/issues"
+  },
+  "homepage": "https://github.com/interactiveschoolhouse/ish#readme"
+}

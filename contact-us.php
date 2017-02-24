@@ -9,9 +9,11 @@
     <section class="mainContent">
         <div class="container">
             <ul class="quick-contact__container">
-                <li class="quick-contact__item">
+                <li class="quick-contact__item item--1">
                     <div class="quick-contact__icon">
-                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                        <span>
+                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                        </span>
                     </div>
                     <div class="quick-contact__info">
                         <h3>Address:</h3>
@@ -20,31 +22,65 @@
                         <div>Three Rivers, MA 01080</div>
                     </div>
                 </li>
-                <li class="quick-contact__item">
+                <li class="quick-contact__item item--2">
                     <div class="quick-contact__icon">
-                        <i class="fa fa-phone" aria-hidden="true"></i>
+                        <span>
+                            <i class="fa fa-phone" aria-hidden="true"></i>
+                        </span>
                     </div>
                     <div class="quick-contact__info">
                         <h3>Phone:</h3>
                         <div>
-                            <a href="tel:<?php echo CONTACT_TELEPHONE_RAW ?>"><strong><?php echo CONTACT_TELEPHONE_DISPLAY ?></strong></a>
+                            <a href="tel:<?php echo CONTACT_TELEPHONE_RAW ?>"><?php echo CONTACT_TELEPHONE_DISPLAY ?></a>
                         </div>
                     </div>
                 </li>
-                <li class="quick-contact__item">
+                <li class="quick-contact__item item--3">
                     <div class="quick-contact__icon">
-                        <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                        <span>
+                            <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                        </span>
                     </div>
                     <div class="quick-contact__info">
                         <h3>Email:</h3>
                         <div>
-                            <a href="mailto:<?php echo CONTACT_EMAIL ?>"><strong><?php echo CONTACT_EMAIL ?></strong></a>
+                            <a href="mailto:<?php echo CONTACT_EMAIL ?>"><?php echo CONTACT_EMAIL ?></a>
                         </div>
                     </div>
                 </li>
             </ul>
         </div>
     </section>
+    
+    <section class="mapArea">
+      <div id="map"></div>
+    </section>
+
+    <section class="bottom-content">
+        <div class="container">
+            <form method="post" class="site-form">
+                <div class="form__field field--half-width">
+                    <input name="name" placeholder="Name"></input>
+                </div>
+                <div class="form__field field--half-width">
+                    <input name="address" placeholder="Address"></input>
+                </div>
+                <div class="form__field field--half-width">
+                    <input name="town" placeholder="Town"></input>
+                </div>
+                <div class="form__field field--half-width">
+                    <input name="phone" placeholder="Phone"></input>
+                </div>
+                <div class="form__field">
+                    <input name="email" placeholder="Email"></input>
+                </div>
+                <div class="form__field">
+                    <textarea name="comments" placeholder="Comments"></textarea>
+                </div>
+            </form>
+        </div>
+    </section>
+
     <?php require "/controls/footer.php" ?>
   </div>
   <div class="scrolling">
@@ -52,4 +88,8 @@
   </div>
     
   <?php require "/controls/jsLibraries.php" ?>
+
+  <script src="/plugins/google-custom-map/google-map.js"></script>
+  <?php require "/controls/googleMaps.php" ?>
+
 </body>
