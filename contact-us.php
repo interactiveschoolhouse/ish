@@ -61,21 +61,42 @@
             <form method="post" class="site-form">
                 <div class="form__field field--half-width">
                     <input name="name" placeholder="Name"></input>
+                    <div class="form__field-icon">
+                        <i class="fa fa-user"></i>
+                    </div>
                 </div>
                 <div class="form__field field--half-width">
                     <input name="address" placeholder="Address"></input>
+                    <div class="form__field-icon">
+                        <i class="fa fa-map-o"></i>
+                    </div>
                 </div>
                 <div class="form__field field--half-width">
                     <input name="town" placeholder="Town"></input>
+                    <div class="form__field-icon">
+                        <i class="fa fa-globe"></i>
+                    </div>
                 </div>
                 <div class="form__field field--half-width">
                     <input name="phone" placeholder="Phone"></input>
+                    <div class="form__field-icon">
+                        <i class="fa fa-phone"></i>
+                    </div>
                 </div>
                 <div class="form__field">
                     <input name="email" placeholder="Email"></input>
+                    <div class="form__field-icon">
+                        <i class="fa fa-envelope"></i>
+                    </div>
                 </div>
                 <div class="form__field">
                     <textarea name="comments" placeholder="Comments"></textarea>
+                    <div class="form__field-icon">
+                        <i class="fa fa-comments"></i>
+                    </div>
+                </div>
+                <div class="form__actions">
+                    <button type="submit">Send Message</button>
                 </div>
             </form>
         </div>

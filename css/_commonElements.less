@@ -1,7 +1,7 @@
 @import "_variables.less";
 
 
-.site-button(@bgColor, @color) {
+.site-button(@bgColor, @color, @hoverColor) {
     background-color: @bgColor;
     color: @color;
     font-weight: 600;
@@ -12,17 +12,18 @@
     padding: 0 20px;
     box-shadow: 0 4px 0 rgba(0, 0, 0, 0.1);
     text-transform: uppercase;
+    border: none;
    
     display: inline-block;
     &:hover {
-        color: #b5d56a;
+        color: @hoverColor;
         outline: 0;
         box-shadow: 0 4px 0 rgba(0, 0, 0, 0.3);
     }
 }
 
 .inverse-button {
-    .site-button(#ffffff, #666666);
+    .site-button(#ffffff, #666666, #b5d56a);
 }
 
 .navbar-nav {
