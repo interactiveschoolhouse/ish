@@ -156,6 +156,19 @@
 .form__field.field--half-width {
   width: 50%;
 }
+.form__field-error {
+  display: none;
+}
+.form-field--error .form__field-error {
+  display: block;
+  color: #b94a48;
+  font-weight: bold;
+}
+.form-field--error input,
+.form-field--error textarea {
+  border-color: #b94a48 !important;
+  box-shadow: 0 0 5px #b94a48 !important;
+}
 .form__field-icon {
   position: absolute;
   z-index: 100;

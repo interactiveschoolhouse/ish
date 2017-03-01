@@ -1,61 +1,79 @@
 <?php
 namespace ish;
-    require_once 'vendor/autoload.php';
-    use GuzzleHttp\Client;
-    use GuzzleHttp\Psr7\Request;
 
     class ContactUsForm {
         public static function isRequestForMe() {
-            echo "<div style='color:red'>";
-            echo "<div>REQUEST_METHOD: " . $_SERVER['REQUEST_METHOD'] . "</div>";
-            echo "<div>formid isset: " . isset($_POST['formid']) . "</div>";
-            if (isset($_POST['formid'])) {
-                echo "<div>formid: " . $_POST['formid'] . "</div>";
-            }
-            echo "</div>";
-            return ($_SERVER['REQUEST_METHOD'] == 'POST' && ContactUsForm::getPostValue('formid') == 'contactUs');
+            return (HttpRequest::method() == 'POST' && HttpRequest::form('formid') == 'contactUs');
         }
 
-        public static function getPostValue($fieldName) {
-            if (isset($_POST[$fieldName]))
-            {
-                return $_POST[$fieldName];
-            }
-            return "";
+        function __construct() {
+            $this->submitResult = new ContactUsResult();
         }
 
         private $submitResult;
-
+        private $serverError = false;
+        private $contactData;
         public function submitForm() {
-            $this->submitResult = new ContactUsResult();
+            $this->contactData = new ContactUsData();
 
             $this->validateForm();
 
             if ($this->submitResult->isValid()) {
-                
-                $this->submitResult->formSubmitted();
+                try {
+                    $client = new \GuzzleHttp\Client();
+                    $response = $client->post(AppSettings::WebApiServiceUrl . '/api/contactus', [ 'body' => json_encode($contactData) ]);
+                    $code = $response->getStatusCode();
+                    if ($code != 200) {
+                        $serverError = true;
+                    }
+                }
+                catch(\Exception $e) {
+                    $serverError = true;
+                }
 
-                echo "contact us successfully submitted!";
-            }
-            else {
-                echo "contact us failed validation!";
-                echo "<div>" . $this->submitResult->getFieldError("name") . "</div>";
-                echo "<div>" . $this->submitResult->getFieldError("email") . "</div>";
-                echo "<div>" . $this->submitResult->getFieldError("comments") . "</div>";
+                if (!$serverError) {
+                    HttpResponse::redirect("/contact-us.php?success=1");
+                }
             }
 
             return $this->submitResult;
         }
 
+        public function getFieldError($name) {
+            return $this->submitResult->getFieldError($name);
+        }
+
+        public function getFieldErrorClass($name) {
+            if ($this->submitResult->hasFieldError($name)){
+                return "form-field--error";
+            }
+            return "";
+        }
+
+        public function getFormErrorClass() {
+            if ($this->hasErrors()){
+                return "form--error";
+            }
+            return "";
+        }
+
+        public function hasErrors() {
+            return $this->submitResult->isValid(); 
+        }
+
+        public function hasServerError() {
+            return $this->serverError;
+        }
+
         private function validateForm()
         {
-            $this->requireField("name", "Name Is Required");
-            $this->requireField("comments", "A comment Is Required");
+            $this->requireField("name", "Name is required");
+            $this->requireField("comments", "A comment is required");
             $this->requireEmail("email", "A valid e-mail address is required");
         }
 
         private function requireField($name, $message) {
-            $value = ContactUsForm::getPostValue($name);
+            $value = HttpRequest::form($name);
             if ($value == "") {
                 $this->submitResult->setFieldError($name, $message);
             }
@@ -63,7 +81,7 @@ namespace ish;
 
         private function requireEmail($name, $message)
         {
-            $value = ContactUsForm::getPostValue($name);
+            $value = HttpRequest::form($name);
             $pattern = '/^([0-9a-z]([-.\w]*[0-9a-z])*@(([0-9a-z])+([-\w]*[0-9a-z])*\.)+[a-z]{2,6})$/i';
             if (!preg_match($pattern, $value)) 
             {
@@ -71,6 +89,24 @@ namespace ish;
             }
         }
 
+    }
+
+    class ContactUsData {
+        function __construct() {
+            $this->Name = HttpRequest::form("name");
+            $this->Address = HttpRequest::form("address");
+            $this->Town = HttpRequest::form("town");
+            $this->Phone = HttpRequest::form("phone");
+            $this->Email = HttpRequest::form("email");
+            $this->Comments = HttpRequest::form("comments");
+        }
+
+        public $Name;
+        public $Address;
+        public $Town;
+        public $Phone;
+        public $Email;
+        public $Comments;
     }
 
     class ContactUsResult {
@@ -87,13 +123,6 @@ namespace ish;
         }
         public function setFieldError($name, $errorMessage) {
             $this->_errorFields[$name] = $errorMessage;
-        }
-        private $_submitted = false;
-        public function formSubmitted() {
-            $this->_submitted = true;
-        }
-        public function isSubmitted() {
-            return $this->_submitted && $this->isValid();
         }
 
         public function isValid() {

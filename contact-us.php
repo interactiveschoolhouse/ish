@@ -1,7 +1,13 @@
-<?php $pageTitle="Contact Us" ?>
 <?php 
+    $pageTitle="Contact Us";
     require "/code/startup.php";
     require "/code/ContactUsForm.php";
+    
+    $contactForm = new \ish\ContactUsForm();
+    
+    if (\ish\ContactUsForm::isRequestForMe()) {
+        $contactForm->submitForm();
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -61,67 +67,57 @@
 
     <section class="bottom-content">
         <div class="container">
-            <?php
-            $contactForm = new \ish\ContactUsForm();
-
-            if (\ish\ContactUsForm::isRequestForMe()) {
-                $submitResult = $contactForm->submitForm();
-            }
-            else { 
-                $submitResult = new \ish\ContactUsResult();
-            }
-            ?>
-
-            <?php if($submitResult->isSubmitted()){ ?>
+            <?php if (\ish\HttpRequest::queryString("success") == "1") { ?>
                 <div class="contact-us__thank-you">
-                    Thank you for your request, we will be in touch.
+                    Thank you for your contact information, we will be in touch.
                 </div>
             <?php } else { ?>
                 <form method="post" class="site-form">
                     <input type="hidden" name="formid" value="contactUs">
-                    <div class="form__field field--half-width">
-                        <input name="name" placeholder="Name" value="<?php echo \ish\ContactUsForm::getPostValue('name'); ?>"></input>
+                    <div class="form__field field--half-width <?php echo $contactForm->getFieldErrorClass("name") ?>">
+                        <input name="name" placeholder="Name *" value="<?php echo \ish\HttpRequest::form('name'); ?>"></input>
                         <div class="form__field-icon">
                             <i class="fa fa-user"></i>
                         </div>
+                        <div class="form__field-error"><?php echo $contactForm->getFieldError("name") ?></div>
                     </div>
                     <div class="form__field field--half-width">
-                        <input name="address" placeholder="Address" value="<?php echo \ish\ContactUsForm::getPostValue('address'); ?>"></input>
+                        <input name="address" placeholder="Address" value="<?php echo \ish\HttpRequest::form('address'); ?>"></input>
                         <div class="form__field-icon">
                             <i class="fa fa-map-o"></i>
                         </div>
                     </div>
                     <div class="form__field field--half-width">
-                        <input name="town" placeholder="Town" value="<?php echo \ish\ContactUsForm::getPostValue('town'); ?>"></input>
+                        <input name="town" placeholder="Town" value="<?php echo \ish\HttpRequest::form('town'); ?>"></input>
                         <div class="form__field-icon">
                             <i class="fa fa-globe"></i>
                         </div>
                     </div>
                     <div class="form__field field--half-width">
-                        <input name="phone" placeholder="Phone" value="<?php echo \ish\ContactUsForm::getPostValue('phone'); ?>"></input>
+                        <input name="phone" placeholder="Phone" value="<?php echo \ish\HttpRequest::form('phone'); ?>"></input>
                         <div class="form__field-icon">
                             <i class="fa fa-phone"></i>
                         </div>
                     </div>
-                    <div class="form__field">
-                        <input name="email" placeholder="Email" value="<?php echo \ish\ContactUsForm::getPostValue('email'); ?>"></input>
+                    <div class="form__field <?php echo $contactForm->getFieldErrorClass("email") ?>">
+                        <input name="email" placeholder="Email *" value="<?php echo \ish\HttpRequest::form('email'); ?>"></input>
                         <div class="form__field-icon">
                             <i class="fa fa-envelope"></i>
                         </div>
+                        <div class="form__field-error"><?php echo $contactForm->getFieldError("email") ?></div>
                     </div>
-                    <div class="form__field">
-                        <textarea name="comments" placeholder="Comments"><?php echo \ish\ContactUsForm::getPostValue('comments')?></textarea>
+                    <div class="form__field <?php echo $contactForm->getFieldErrorClass("comments") ?>">
+                        <textarea name="comments" placeholder="Comments *"><?php echo \ish\HttpRequest::form('comments')?></textarea>
                         <div class="form__field-icon">
                             <i class="fa fa-comments"></i>
                         </div>
+                        <div class="form__field-error"><?php echo $contactForm->getFieldError("comments") ?></div>
                     </div>
                     <div class="form__actions">
                         <button type="submit">Send Message</button>
                     </div>
                 </form>
-
             <?php } ?>
-
         </div>
     </section>
 
