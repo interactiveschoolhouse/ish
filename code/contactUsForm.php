@@ -21,17 +21,25 @@ namespace ish;
             if ($this->submitResult->isValid()) {
                 try {
                     $client = new \GuzzleHttp\Client();
-                    $response = $client->post(AppSettings::WebApiServiceUrl . '/api/contactus', [ 'body' => json_encode($contactData) ]);
+                    $response = $client->post(AppSettings::WebApiServiceUrl . '/api/contactus', 
+                        [ 
+                            'headers'  => [
+                                'content-type' => 'application/json', 
+                                'Accept' => 'application/json',
+                                'api-key' => AppSettings::ApiKey,
+                                ],
+                            'body' => json_encode($this->contactData)
+                        ]);
                     $code = $response->getStatusCode();
                     if ($code != 200) {
-                        $serverError = true;
+                        $this->serverError = true;
                     }
                 }
                 catch(\Exception $e) {
-                    $serverError = true;
+                    $this->serverError = true;
                 }
 
-                if (!$serverError) {
+                if (!$this->serverError) {
                     HttpResponse::redirect("/contact-us.php?success=1");
                 }
             }

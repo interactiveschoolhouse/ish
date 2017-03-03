@@ -4,7 +4,10 @@ namespace ish;
         static function getUpcomingEvents() {
             try{
                 $client = new \GuzzleHttp\Client();
-                $response = $client->request('GET', AppSettings::WebApiServiceUrl . '/api/calendar');
+                $response = $client->request('GET', AppSettings::WebApiServiceUrl . '/api/calendar',
+                    [ 
+                        'headers'  => ['api-key' => AppSettings::ApiKey] 
+                    ]);
 
                 return json_decode($response->getBody(), false);
             }

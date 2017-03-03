@@ -71,7 +71,9 @@
                 <div class="contact-us__thank-you">
                     Thank you for your contact information, we will be in touch.
                 </div>
-            <?php } else { ?>
+            <?php } else if ($contactForm->hasServerError()) {
+                echo "<div>Sorry, there was an unexpected problem processing your request.</div>";
+            } else { ?>
                 <form method="post" class="site-form">
                     <input type="hidden" name="formid" value="contactUs">
                     <div class="form__field field--half-width <?php echo $contactForm->getFieldErrorClass("name") ?>">
