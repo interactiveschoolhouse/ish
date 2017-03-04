@@ -3,6 +3,7 @@
   flex-wrap: wrap;
   margin: 1em auto;
   max-width: 1170px;
+  padding: 1em;
 }
 .three-column-container img {
   width: 100%;
@@ -23,8 +24,8 @@
   flex-wrap: wrap;
 }
 .two-column__list li {
+  padding: 1em;
   width: 50%;
-  padding: 1em 2em;
 }
 .section-title {
   text-align: center;
@@ -47,7 +48,6 @@
 @media (max-width: 1200px) {
   .three-column-container {
     max-width: 1170px;
-    padding: 1em;
   }
 }
 @media (max-width: 768px) {
@@ -68,6 +68,9 @@
     width: auto;
     padding: 1em;
   }
+  .two-column__list li {
+    width: 100%;
+  }
 }
 .site-nav {
   background-color: #fbf59f;
@@ -76,18 +79,87 @@
   max-width: 1170px;
   margin: 0 auto;
   display: flex;
+  align-items: center;
 }
 .site-nav__logo {
   flex: 1;
 }
+.nav-menu__expander {
+  flex: 1;
+  flex-grow: 1;
+}
+.nav-menu__expander i {
+  display: none;
+}
 .site-nav__menu {
   flex: 3;
 }
-.site-nav__menu ul {
-  display: flex;
-}
-.site-nav__menu ul li:first-child {
+.nav-menu__spacer {
   flex-grow: 1;
+}
+.nav-menu__root {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+.nav-menu__root li a {
+  color: #ea7066;
+}
+.nav-menu__item {
+  text-align: center;
+  padding: 1em;
+}
+.nav-menu__item:hover {
+  opacity: 0.8;
+}
+.nav-item__label {
+  padding-top: 3px;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.nav-item__icon {
+  text-align: center;
+}
+.nav-item__icon i {
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  border-radius: 100%;
+  color: #fff;
+  background-color: #ea7066;
+  font-size: 16px;
+}
+@media (max-width: 768px) {
+  .site-nav__logo img {
+    max-height: 100px;
+    width: auto;
+  }
+  .nav-menu__expander {
+    align-self: flex-end;
+    text-align: right;
+  }
+  .nav-menu__expander i {
+    cursor: pointer;
+    color: #fff;
+    background-color: #ea7066;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    display: inline-block;
+  }
+  .nav-menu__expander i:hover {
+    opacity: 0.8;
+  }
+  .site-nav__menu {
+    display: none;
+  }
+}
+@media (max-width: 480px) {
+  .site-nav__logo img {
+    max-height: 50px;
+    width: auto;
+  }
 }
 .site-form {
   display: flex;
@@ -194,13 +266,39 @@
   width: auto;
   height: 200px;
 }
+.about-school__content {
+  clear: both;
+}
 .about-school__content h2 {
   font-size: 2em;
   text-transform: none;
 }
+.about-school__photo--mobile {
+  text-align: center;
+  display: none;
+  float: left;
+  margin-right: 1em;
+}
+.about-school__photo--mobile img {
+  max-height: 250px;
+  width: auto;
+}
 @media (min-width: 768px) {
   .banner__splash img {
     height: 282px;
+  }
+}
+@media (max-width: 768px) {
+  .about-school__photo {
+    display: none;
+  }
+  .about-school__photo--mobile {
+    display: block;
+  }
+}
+@media (max-width: 480px) {
+  .about-school__photo--mobile img {
+    max-height: 150px;
   }
 }
 .right-callout {

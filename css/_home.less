@@ -9,9 +9,21 @@
 }
 
 .about-school__content {
+    clear: both;
     h2 {
         font-size: 2em;
         text-transform: none;
+    }
+}
+
+.about-school__photo--mobile {
+    text-align: center;
+    display: none;
+    float: left;
+    margin-right: 1em;
+    img {
+        max-height: 250px;
+        width: auto;
     }
 }
 
@@ -22,3 +34,20 @@
     }
 }
 
+@media (max-width: @tabletBreakPoint) {
+    .about-school__photo {
+        display: none;
+    }
+    .about-school__photo--mobile {
+        display: block;
+    }
+}
+
+@media (max-width: @phoneBreakPoint) {
+    .about-school__photo--mobile {
+        img {
+            max-height: 150px;
+        }
+    }
+    
+}

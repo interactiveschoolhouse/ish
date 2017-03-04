@@ -5,6 +5,7 @@
     flex-wrap: wrap;
     margin: @standardPadding auto;
     max-width: @largeMaxWidth;
+    padding: @standardPadding;
 
     img {
         width: 100%;
@@ -28,8 +29,8 @@
     flex-wrap: wrap;
 
     li {
+        padding: @standardPadding;
         width: 50%;
-        padding: @standardPadding 2em;
     }
 }
 
@@ -53,7 +54,6 @@
 @media (max-width: @largeBreakPoint) {
     .three-column-container {
         max-width: @largeMaxWidth;
-        padding: @standardPadding;
     }
 }
 
@@ -74,6 +74,13 @@
         .column-three {
             width: auto;
             padding: @standardPadding;
+        }
+    }
+
+    .two-column__list {
+ 
+        li {
+            width: 100%;
         }
     }
 }
