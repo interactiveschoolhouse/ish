@@ -419,7 +419,7 @@
   flex-grow: 1;
   position: relative;
 }
-.event__commands a {
+.event__commands button {
   position: absolute;
   bottom: 0;
 }

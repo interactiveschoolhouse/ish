@@ -33,7 +33,10 @@
                     </div>
                     <div class="event__commands">
                         <?php if ($event->RegistrationAllowed) { ?>
-                        <a class="inverse-button" href="#register">Register</a>
+                            <form method="post" Action="/register.php">
+                                <input type="hidden" name="registrationName" value="<?php echo $event->RegistrationName ?>"/>
+                                <button class="inverse-button" type="submit">Register</button>
+                            </form>
                         <?php } ?>
                     </div>
                 </div>
