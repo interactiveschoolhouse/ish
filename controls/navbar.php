@@ -11,6 +11,9 @@
     <div class="site-nav__menu">
       <ul class="nav-menu__root">
         <li class="nav-menu__spacer">
+          <div class="nav-menu__close">
+            <i class="fa fa-close"></i>
+          <div>
         </li>
         <li>
           <a href="/">
