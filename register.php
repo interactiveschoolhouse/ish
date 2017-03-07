@@ -21,17 +21,20 @@
                         <INPUT TYPE="hidden" NAME="lc" VALUE="US">
 
                         <div class="form__field">
-                            <p>
-                                <?php echo \ish\HttpRequest::form('registrationName'); ?>
-                            </p>
+                            <h3 class="register-event__title">
+                                <?php echo \ish\HttpRequest::form('eventName'); ?>
+                            </h3>
+                            <div class="register-event__summary">
+                                <?php echo \ish\HttpRequest::form('eventDescription'); ?>
+                            </div>
                         </div>
                         <div class="form__field field--half-width">
-                            <label for="first_name">First Name</label>
-                            <input id="first_name" name="first_name" placeholder="First Name *" required="required"></input>
+                            <label for="name">Name</label>
+                            <input id="name" name="name" placeholder="Name *" required="required"></input>
                         </div>
-                        <div class="form__field field--half-width">
-                            <label for="last_name">Last Name</label>
-                            <input id="last_name" name="last_name" placeholder="Last Name *" required="required"></input>
+                        <div class="form__field  field--half-width">
+                            <label for="amount">Payment Amount</label>
+                            <input id="amount" name="amount" placeholder="Amount *" required="required"></input>
                         </div>
                         <div class="form__field field--half-width">
                             <label for="address1">Address</label>
@@ -48,10 +51,6 @@
                         <div class="form__field field--half-width">
                             <label for="email">Email</label>
                             <input id="email" name="email" placeholder="Email *" type="email" required="required"></input>
-                        </div>
-                        <div class="form__field  field--half-width">
-                            <label for="amount">Payment Amount</label>
-                            <input id="amount" name="amount" placeholder="Amount *" required="required"></input>
                         </div>
                         <div class="form__field  field--half-width">
                             &nbsp;

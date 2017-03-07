@@ -11,6 +11,8 @@
     <ul class="two-column__list">
         <?php
         $events = \ish\Events::getUpcomingEvents();
+        $htmlDescription = "";
+
         foreach($events as $event) { ?>
             <li>
                 <div class="event__content">
@@ -26,15 +28,18 @@
                             <?php } ?>
                         </div>
                         <div class="event__description">
-                            <?php foreach($event->DescriptionLines as $descriptionLine) { ?>
-                                <p><?php echo $descriptionLine ?></p>
-                            <?php } ?>
+                            <?php foreach($event->DescriptionLines as $descriptionLine) { 
+                                $htmlDescription .= "<p>" . htmlentities($descriptionLine) . "</p>";
+                            }
+                            echo $htmlDescription;
+                            ?>
                         </div>
                     </div>
                     <div class="event__commands">
                         <?php if ($event->RegistrationAllowed) { ?>
                             <form method="post" Action="/register.php">
-                                <input type="hidden" name="registrationName" value="<?php echo $event->RegistrationName ?>"/>
+                                <input type="hidden" name="eventName" value="<?php echo htmlentities($event->RegistrationName) ?>"/>
+                                <input type="hidden" name="eventDescription" value="<?php echo $htmlDescription ?>"/>
                                 <button class="inverse-button" type="submit">Register</button>
                             </form>
                         <?php } ?>
