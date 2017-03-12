@@ -12,6 +12,7 @@
         <?php
         $events = \ish\Events::getUpcomingEvents();
         $htmlDescription = "";
+        $concatDescriptionLines = "";
 
         foreach($events as $event) { ?>
             <li>
@@ -30,6 +31,10 @@
                         <div class="event__description">
                             <?php foreach($event->DescriptionLines as $descriptionLine) { 
                                 $htmlDescription .= "<p>" . htmlentities($descriptionLine) . "</p>";
+                                if (!empty($concatDescriptionLines)) {
+                                    $concatDescriptionLines .= "|";
+                                }
+                                $concatDescriptionLines .= htmlentities($descriptionLine);
                             }
                             echo $htmlDescription;
                             ?>
@@ -39,7 +44,7 @@
                         <?php if ($event->RegistrationAllowed) { ?>
                             <form method="post" Action="/register.php">
                                 <input type="hidden" name="eventName" value="<?php echo htmlentities($event->RegistrationName) ?>"/>
-                                <input type="hidden" name="eventDescription" value="<?php echo $htmlDescription ?>"/>
+                                <input type="hidden" name="eventDescription" value="<?php echo $concatDescriptionLines ?>"/>
                                 <button class="inverse-button" type="submit">Register</button>
                             </form>
                         <?php } ?>

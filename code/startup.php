@@ -5,4 +5,5 @@
     require "/code/httpResponse.php";
     require "/code/globals.php";
     require "/code/appSettings.php";
+
 ?>
