@@ -1,0 +1,21 @@
+@import "_variables.less";
+
+.tutoring__gallery {
+    display: flex;
+    flex-wrap: wrap;
+    img { 
+        max-width: 100%;
+        height: auto;
+        display: block;
+        padding: @standardPadding;
+    }
+}
+.tutoring-gallery__left-panel, .tutoring-gallery__right-panel {
+    width: 50%;
+}
+
+@media (max-width: @tabletBreakPoint) {
+    .tutoring-gallery__left-panel, .tutoring-gallery__right-panel {
+        width: 100%;
+    }
+}
