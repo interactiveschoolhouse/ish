@@ -1,6 +1,6 @@
 @import "_variables.less";
 
-.tutoring__gallery {
+.simple-gallery {
     display: flex;
     flex-wrap: wrap;
     img { 
@@ -10,12 +10,19 @@
         padding: @standardPadding;
     }
 }
-.tutoring-gallery__left-panel, .tutoring-gallery__right-panel {
+.simple-gallery__left-panel, .simple-gallery__right-panel {
     width: 50%;
 }
 
+.responsive-calendar {
+    position: relative; padding-bottom: 75%; height: 0; overflow: hidden;
+    iframe {
+        position: absolute; top:0; left: 0; width: 100%; height: 100%;
+    }
+}
+
 @media (max-width: @tabletBreakPoint) {
-    .tutoring-gallery__left-panel, .tutoring-gallery__right-panel {
+    .simple-gallery__left-panel, .simple-gallery__right-panel {
         width: 100%;
     }
 }

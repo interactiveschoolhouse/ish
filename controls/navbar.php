@@ -39,9 +39,19 @@
           <a href="/workshops.php">
             <div class="nav-menu__item">
               <div class="nav-item__icon">
-                <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                <i class="fa fa-group" aria-hidden="true"></i>
               </div>
               <div class="nav-item__label">Workshops</div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="/calendar.php">
+            <div class="nav-menu__item">
+              <div class="nav-item__icon">
+                <i class="fa fa-calendar" aria-hidden="true"></i>
+              </div>
+              <div class="nav-item__label">Calendar</div>
             </div>
           </a>
         </li>

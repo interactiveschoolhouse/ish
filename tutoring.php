@@ -39,11 +39,11 @@
             <h3>
                 About Our Tutoring Space
             </h3>
-            <div class="tutoring__gallery">
-                <div class="tutoring-gallery__left-panel">
+            <div class="simple-gallery">
+                <div class="simple-gallery__left-panel">
                     <img src="/images/common/nancy-roy-tutoring-1.jpg">
                 </div>
-                <div class="tutoring-gallery__right-panel">
+                <div class="simple-gallery__right-panel">
                     <img src="/images/common/art-1.jpg">
                     <img src="/images/common/art-2.jpg">
                 </div>
@@ -55,9 +55,4 @@
   </div>
     
   <?php require "/controls/jsLibraries.php";?>
-  <script src="/js/register.js"></script>
 </body>
-<!-- 
-    Maybe need to turn on auto-return?
-    http://stackoverflow.com/questions/18007480/paypal-checkout-return-data
--->

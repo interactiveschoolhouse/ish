@@ -398,6 +398,10 @@ ul.bulleted-list li {
 .right-callout ul li {
   color: rgba(255, 255, 255, 0.7);
 }
+.right-callout li {
+  padding-left: 1em;
+  padding-bottom: 3px;
+}
 .events-container {
   color: #fff;
   margin: 1em auto;
@@ -543,23 +547,36 @@ ul.bulleted-list li {
     display: block;
   }
 }
-.tutoring__gallery {
+.simple-gallery {
   display: flex;
   flex-wrap: wrap;
 }
-.tutoring__gallery img {
+.simple-gallery img {
   max-width: 100%;
   height: auto;
   display: block;
   padding: 1em;
 }
-.tutoring-gallery__left-panel,
-.tutoring-gallery__right-panel {
+.simple-gallery__left-panel,
+.simple-gallery__right-panel {
   width: 50%;
 }
+.responsive-calendar {
+  position: relative;
+  padding-bottom: 75%;
+  height: 0;
+  overflow: hidden;
+}
+.responsive-calendar iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 @media (max-width: 768px) {
-  .tutoring-gallery__left-panel,
-  .tutoring-gallery__right-panel {
+  .simple-gallery__left-panel,
+  .simple-gallery__right-panel {
     width: 100%;
   }
 }
