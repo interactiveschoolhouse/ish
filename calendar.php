@@ -10,6 +10,7 @@
     <?php require "/controls/header.php" ?>
     <section class="top-content">
         <div class="container">
+            <?php require "/controls/events-summary.php" ?>
             <h2>Calendar</h2>
             <div class="responsive-calendar">
                 <iframe src="https://calendar.google.com/calendar/embed?src=a1jndmd2dbhcva55mjnhosmjpo%40group.calendar.google.com&amp;ctz=America/New_York" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>

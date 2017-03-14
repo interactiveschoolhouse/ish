@@ -40,6 +40,7 @@
             }
             else {
                 ish.hideBusy();
+                $(".error-message").remove();
                 $(".top-content .container").prepend("<div class='error-message'><ul class='bulleted-list' id='validationErrors'></ul></div>");
                 var $errorSummary = $("#validationErrors");
                 for(var i = 0; i < data.Errors.length; i++) {
@@ -49,6 +50,7 @@
         })
         .fail(function() {
             ish.hideBusy();
+            $(".error-message").remove();
             $(".top-content .container").prepend("<div class='error-message'>Sorry, there was an unexpected problem processing your request.</div>")
         });
 

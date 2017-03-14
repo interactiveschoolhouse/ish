@@ -21,7 +21,7 @@
 }
 .bottom-content,
 .top-content {
-  margin: 6em 0;
+  margin: 3em 0;
 }
 .bottom-content p,
 .top-content p {
@@ -40,6 +40,7 @@ ul.bulleted-list {
 ul.bulleted-list li {
   list-style-type: disc;
   margin: 0.5em 0;
+  padding: 0;
 }
 .two-column__list {
   display: flex;
@@ -50,6 +51,30 @@ ul.bulleted-list li {
   width: 50%;
 }
 .two-column__list li img {
+  max-width: 100%;
+  height: auto;
+}
+.single-column__list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.single-column__list li {
+  padding: 1em;
+  width: 100%;
+}
+.single-column__list li img {
+  max-width: 100%;
+  height: auto;
+}
+.four-column__list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.four-column__list li {
+  padding: 1em;
+  width: 25%;
+}
+.four-column__list li img {
   max-width: 100%;
   height: auto;
 }
@@ -449,22 +474,46 @@ ul.bulleted-list li {
 }
 .events-container h2 {
   color: #ea7066;
-  margin: 70px 0;
+  margin: 20px 0;
 }
 .events-container h3 {
   color: #fff;
   margin: 12px 0;
 }
-.events-container .two-column__list li:nth-child(4n+1) .event__content {
+.events-container li:nth-child(4n+1) .event__content {
   background-color: #f0c24b;
 }
-.events-container .two-column__list li:nth-child(4n+2) .event__content {
+.events-container li:nth-child(4n+2) .event__content {
   background-color: #b5d56a;
 }
-.events-container .two-column__list li:nth-child(4n+3) .event__content {
+.events-container li:nth-child(4n+3) .event__content {
   background-color: #ea7066;
 }
-.events-container .two-column__list li:nth-child(4n+4) .event__content {
+.events-container li:nth-child(4n+4) .event__content {
+  background-color: #84bed6;
+}
+.events-summary__container {
+  color: #fff;
+}
+.events-summary__container h4 {
+  color: #fff;
+}
+.events-summary__container p {
+  color: #fff;
+}
+.events-summary__container li {
+  padding: 1em;
+}
+.events-summary__container li:nth-child(4n+1) .event__content {
+  background-color: #f0c24b;
+}
+.events-summary__container li:nth-child(4n+2) .event__content {
+  background-color: #b5d56a;
+}
+.events-summary__container li:nth-child(4n+3) .event__content {
+  background-color: #ea7066;
+}
+.events-summary__container li:nth-child(4n+4) .event__content {
   background-color: #84bed6;
 }
 .event__content {

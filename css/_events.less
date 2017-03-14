@@ -9,7 +9,7 @@
     }
     h2 {
         color: #ea7066;
-        margin: 70px 0;
+        margin: 20px 0;
     }
 
     h3 {
@@ -17,26 +17,57 @@
         margin:  12px 0;
     }
     
-    .two-column__list {
-        li:nth-child(4n+1) {
-            .event__content {
-                background-color: @backgroundColor2;
-            }
+    li:nth-child(4n+1) {
+        .event__content {
+            background-color: @backgroundColor2;
         }
-        li:nth-child(4n+2) {
-            .event__content {
-                background-color: @backgroundColor3;
-            }
+    }
+    li:nth-child(4n+2) {
+        .event__content {
+            background-color: @backgroundColor3;
         }
-        li:nth-child(4n+3) {
-            .event__content {
-                background-color: @backgroundColor4;
-            }
+    }
+    li:nth-child(4n+3) {
+        .event__content {
+            background-color: @backgroundColor4;
         }
-        li:nth-child(4n+4) {
-            .event__content {
-                background-color: @backgroundColor1;
-            }
+    }
+    li:nth-child(4n+4) {
+        .event__content {
+            background-color: @backgroundColor1;
+        }
+    }
+}
+
+.events-summary__container {
+    color: #fff;
+    h4 {
+        color: #fff;
+    }
+    p {
+        color: #fff;
+    }
+    li {
+        padding: @standardPadding;
+    }
+    li:nth-child(4n+1) {
+        .event__content {
+            background-color: @backgroundColor2;
+        }
+    }
+    li:nth-child(4n+2) {
+        .event__content {
+            background-color: @backgroundColor3;
+        }
+    }
+    li:nth-child(4n+3) {
+        .event__content {
+            background-color: @backgroundColor4;
+        }
+    }
+    li:nth-child(4n+4) {
+        .event__content {
+            background-color: @backgroundColor1;
         }
     }
 }

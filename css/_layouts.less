@@ -29,7 +29,7 @@
         font-size: 15px;
         font-family: 'Open Sans', sans-serif;
     }
-    margin: 6em 0;
+    margin: 3em 0;
     @media (max-width: @tabletBreakPoint) {
         margin: 3em 0;
     }
@@ -40,6 +40,7 @@ ul.bulleted-list {
     li {
         list-style-type: disc;
         margin: 0.5em 0;
+        padding: 0;
     }
 }
 
@@ -49,6 +50,32 @@ ul.bulleted-list {
     li {
         padding: @standardPadding;
         width: 50%;
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+}
+
+.single-column__list {
+    display: flex;
+    flex-wrap: wrap;
+    li {
+        padding: @standardPadding;
+        width: 100%;
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+
+}
+.four-column__list {
+    display: flex;
+    flex-wrap: wrap;
+    li {
+        padding: @standardPadding;
+        width: 25%;
         img {
             max-width: 100%;
             height: auto;

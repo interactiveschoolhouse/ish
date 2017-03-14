@@ -1,28 +1,22 @@
 <?php require "/code/events.php" ?>
 
-<section class="events-container">
-    <div class="sectionTitle section-title">
-        <h2>
-            <span class="shape shape-left bg-color-4"></span>
-            <span>Our Events</span>
-            <span class="shape shape-right bg-color-4"></span>
-        </h2>        
-    </div>
+<section class="events-summary__container">
+    <h2>Upcoming Events</h2>        
     <ul class="two-column__list">
         <?php
-        $events = \ish\Events::getUpcomingEvents();
+        $events = \ish\Events::getEventsSummary();
 
         foreach($events as $event) { 
             $htmlDescription = "";
             $concatDescriptionLines = "";
-            ?>
+        ?>
             <li>
                 <div class="event__content">
                     <div class="event__date">
                         <?php echo $event->FormattedStartDate ?>
                     </div>
                     <div class="event__info">
-                        <h3><?php echo $event->Title ?></h3>
+                        <h4><?php echo $event->Title ?></h3>
                         <div class="event__time">
                             <?php if (!empty($event->FormattedTimeDuration)) { ?>
                             <i class="fa fa-clock-o" aria-hidden="true"></i>
