@@ -66,7 +66,7 @@ namespace ish;
         }
 
         public function hasErrors() {
-            return $this->submitResult->isValid(); 
+            return !$this->submitResult->isValid(); 
         }
 
         public function hasServerError() {

@@ -125,6 +125,9 @@
                         <button type="submit">Send Message</button>
                     </div>
                 </form>
+                <script type="text/javascript">
+
+                </script>
             <?php } ?>
         </div>
     </section>
@@ -136,6 +139,12 @@
   </div>
     
   <?php require "/controls/jsLibraries.php" ?>
+  <script src="/js/contactUs.js"></script>
+  <?php if (\ish\HttpRequest::queryString("success") == "1" || $contactForm->hasServerError() || $contactForm->hasErrors()) { ?>
+    <script type="text/javascript">
+        $("body").scrollTop($(".bottom-content").offset().top);
+    </script>
+  <?php } ?>
 
   <script src="/plugins/google-custom-map/google-map.js"></script>
   <?php require "/controls/googleMaps.php" ?>

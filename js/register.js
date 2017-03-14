@@ -13,6 +13,8 @@
             SpecialInstructions: $("#specialInstructions").val(),
             PaymentAmount: $("#paymentAmount").val()
         } 
+        
+        ish.showBusy();
 
         $.ajax({
             url: ish.serviceUrl + "/api/Registration",
@@ -37,8 +39,17 @@
                 $payPalForm.submit();
             }
             else {
-
+                ish.hideBusy();
+                $(".top-content .container").prepend("<div class='error-message'><ul class='bulleted-list' id='validationErrors'></ul></div>");
+                var $errorSummary = $("#validationErrors");
+                for(var i = 0; i < data.Errors.length; i++) {
+                    $errorSummary.append("<li>" + data.Errors[i].Description + "</li>");
+                }
             }
+        })
+        .fail(function() {
+            ish.hideBusy();
+            $(".top-content .container").prepend("<div class='error-message'>Sorry, there was an unexpected problem processing your request.</div>")
         });
 
         return false;

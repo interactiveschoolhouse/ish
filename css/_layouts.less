@@ -65,6 +65,44 @@ ul.bulleted-list {
     }
 }
 
+.loader__overlay
+{
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: black;
+    opacity: 0.25;
+}
+
+.loader__spinner {
+    position: fixed;
+    z-index: 101;
+    top: 50%;
+    left: 50%;
+    width: 60px;
+    height: 60px;
+    margin-left: -30px;
+    margin-top: -30px;
+    border: 12px solid #f3f3f3;
+    border-top: 12px solid @backgroundColor4;
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+}
+.error-message {
+    color: red;
+    margin: 1em;
+    font-size: 1.1em;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
 @media (max-width: @largeBreakPoint) {
     .three-column-container {
         max-width: @largeMaxWidth;
