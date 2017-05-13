@@ -146,6 +146,9 @@ ul.bulleted-list li {
     width: auto;
     padding: 1em;
   }
+  .two-column__list {
+    display: block;
+  }
   .two-column__list li {
     width: 100%;
   }

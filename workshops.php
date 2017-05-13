@@ -41,10 +41,12 @@
                 <div class="simple-gallery__left-panel">
                     <img src="/images/common/workshop-1.jpg">
                     <img src="/images/common/workshop-4.jpg">
+                    <img src="/images/common/workshop-5.jpg">
                 </div>
                 <div class="simple-gallery__right-panel">
                     <img src="/images/common/homeschool-1.jpg">
                     <img src="/images/common/workshop-3.jpg">
+                    <img src="/images/common/workshop-6.jpg">
                 </div>
             </div>
         </div>
