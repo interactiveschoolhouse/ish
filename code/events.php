@@ -1,6 +1,23 @@
 <?php
 namespace ish;
     class Events {
+        static function getEvent($id) {
+            try{
+                $client = new \GuzzleHttp\Client();
+                $response = $client->request('GET', AppSettings::WebApiServiceUrl . '/api/calendar/' . $id,
+                    [ 
+                        'headers'  => ['api-key' => AppSettings::ApiKey] 
+                    ]);
+
+                return json_decode($response->getBody(), false);
+            }
+            catch(\Exception $e) {
+                $errors = array(new EventError());
+                return $errors;
+            }
+
+        }
+
         static function getUpcomingEvents() {
             try{
                 $client = new \GuzzleHttp\Client();

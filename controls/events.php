@@ -14,7 +14,6 @@
 
         foreach($events as $event) { 
             $htmlDescription = "";
-            $concatDescriptionLines = "";
             ?>
             <li>
                 <div class="event__content">
@@ -32,10 +31,6 @@
                         <div class="event__description">
                             <?php foreach($event->DescriptionLines as $descriptionLine) { 
                                 $htmlDescription .= "<p>" . htmlentities($descriptionLine) . "</p>";
-                                if (!empty($concatDescriptionLines)) {
-                                    $concatDescriptionLines .= "|";
-                                }
-                                $concatDescriptionLines .= htmlentities($descriptionLine);
                             }
                             echo $htmlDescription;
                             ?>
@@ -44,8 +39,7 @@
                     <div class="event__commands">
                         <?php if ($event->RegistrationAllowed) { ?>
                             <form method="post" Action="/register.php">
-                                <input type="hidden" name="eventName" value="<?php echo htmlentities($event->RegistrationName) ?>"/>
-                                <input type="hidden" name="eventDescription" value="<?php echo $concatDescriptionLines ?>"/>
+                                <input type="hidden" name="eventId" value="<?php echo $event->Id ?>"/>
                                 <button class="inverse-button" type="submit">Register</button>
                             </form>
                         <?php } ?>

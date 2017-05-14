@@ -1,6 +1,8 @@
 <?php 
     $pageTitle="Register";
     require "/code/startup.php";
+    require "/code/events.php";
+    $registerEvent = \ish\Events::getEvent(\ish\HttpRequest::form('eventId'));
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,17 +18,20 @@
 
                         <div class="form__field">
                             <h3 class="register-event__title">
-                                <?php echo \ish\HttpRequest::form('eventName'); ?>
+                                <?php echo htmlentities($registerEvent->RegistrationName); ?>
                             </h3>
                             <div class="register-event__summary">
                                 <?php 
-                                $pipedEventSummary = \ish\HttpRequest::form('eventDescription');
-                                echo "<input type='hidden' id='pipedEventSummary' value='" . $pipedEventSummary . "'>";
-
-                                $descriptionLines = explode("|", $pipedEventSummary);
+                                $descriptionLines = $registerEvent->DescriptionLines;
+                                $concatDescriptionLines = "";
                                 foreach($descriptionLines as $descriptionLine) {
-                                    echo "<p>" . $descriptionLine . "</p>";
+                                    echo "<p>" . htmlentities($descriptionLine) . "</p>";
+                                    if (!empty($concatDescriptionLines)) {
+                                        $concatDescriptionLines .= "|";
+                                    }
+                                    $concatDescriptionLines .= htmlentities($descriptionLine, ENT_QUOTES);
                                 }
+                                echo "<input type='hidden' id='pipedEventSummary' value='" . $concatDescriptionLines . "'>";
                                 ?>
                             </div>
                         </div>
@@ -73,7 +78,7 @@
             <INPUT TYPE="hidden" NAME="return" VALUE="<?php echo \ish\AppSettings::IshUrl . "/registration-complete.php"; ?>">
             <INPUT TYPE="hidden" NAME="rm" VALUE="2">
             <input type="hidden" name="undefined_quantity" value="0">
-            <INPUT TYPE="hidden" NAME="item_name" VALUE="<?php echo \ish\HttpRequest::form('eventName'); ?>">
+            <INPUT TYPE="hidden" NAME="item_name" VALUE="<?php echo htmlentities($registerEvent->RegistrationName); ?>">
             <INPUT TYPE="hidden" NAME="item_number">
             <input type="hidden" name="amount">
             <INPUT TYPE="hidden" NAME="lc" VALUE="US">
