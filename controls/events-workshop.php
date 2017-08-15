@@ -2,7 +2,7 @@
 
 <section class="events-summary__container">
     <h2>Upcoming Workshops</h2>        
-    <ul class="single-column__list">
+    <ul class="two-column__list">
         <?php
         $events = \ish\Events::getWorkshopEventsSummary();
 

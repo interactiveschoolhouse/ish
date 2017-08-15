@@ -3,6 +3,7 @@
 
 #My custom ignores
 vendor/
+*.config
 
 # User-specific files
 *.suo

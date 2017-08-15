@@ -38,7 +38,7 @@ namespace ish;
         static function getEventsSummary() {
             try{
                 $client = new \GuzzleHttp\Client();
-                $response = $client->request('GET', AppSettings::WebApiServiceUrl . '/api/calendar/filtered?numToTake=8&registerEventsOnly=false',
+                $response = $client->request('GET', AppSettings::WebApiServiceUrl . '/api/calendar/filtered?numToTake=32&registerEventsOnly=false',
                     [ 
                         'headers'  => ['api-key' => AppSettings::ApiKey] 
                     ]);
@@ -54,7 +54,7 @@ namespace ish;
         static function getWorkshopEventsSummary() {
             try{
                 $client = new \GuzzleHttp\Client();
-                $response = $client->request('GET', AppSettings::WebApiServiceUrl . '/api/calendar/filtered?numToTake=2&registerEventsOnly=true',
+                $response = $client->request('GET', AppSettings::WebApiServiceUrl . '/api/calendar/filtered?numToTake=32&registerEventsOnly=true',
                     [ 
                         'headers'  => ['api-key' => AppSettings::ApiKey] 
                     ]);
