@@ -9,4 +9,4 @@
         <a target="_blank" href="https://maps.google.com/maps?saddr=My+Location&daddr=42.180826,-72.362842">Click here for driving directions</a><br>
     </div>
 </div>
-<script src="http://maps.google.com/maps/api/js?key=AIzaSyAjUY8rnvqvQmnUvnztrDgnIpQTLxidt18&callback=initMap"></script>
+<script src="https://maps.google.com/maps/api/js?key=AIzaSyCvjUQnfLuRxWOHISEq2jbygRfnH12AUnk&callback=initMap"></script>
