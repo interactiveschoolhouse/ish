@@ -17,7 +17,7 @@
         ish.showBusy();
 
         $.ajax({
-            url: ish.serviceUrl + "/api/Registration",
+            url: "/api/Registration",
             method: "POST",
             data: JSON.stringify(registrationRequest),
             dataType: "json",

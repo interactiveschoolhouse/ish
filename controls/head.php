@@ -20,6 +20,6 @@
   <link rel="stylesheet" href="/css/site.min.css">
 
   <!-- Icons -->
-  <!--<link rel="shortcut icon" href="/img/favicon.png">-->
-
+  <link rel="icon" type="image/png" href="/images/common/favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="/images/common/favicon-16x16.png" sizes="16x16" />
 </head>
